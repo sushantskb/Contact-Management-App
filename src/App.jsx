@@ -1,7 +1,11 @@
+import ContactForm from "./components/ContactForm";
 
 const App = () => {
   return (
-    <h1 className="text-sky-500 dark:text-sky-400">Hello World</h1>
+    <div className="container mx-auto p-4">
+      <h1 className="text-2xl font-bold mb-4">Contact Management</h1>
+      <ContactForm />
+    </div>
   );
 };
 
