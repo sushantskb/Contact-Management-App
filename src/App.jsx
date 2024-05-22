@@ -1,14 +1,26 @@
-import ContactForm from "./components/ContactForm";
-import ContactsList from "./components/ContactsList";
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
+import Layout from './components/Layout'
+import Home from './pages/Home'
+import ContactForm from './components/ContactForm'
+import ContactsList from './components/ContactsList'
 
 const App = () => {
   return (
-    <div className="container mx-auto p-4">
-      <h1 className="text-2xl font-bold mb-4">Contact Management</h1>
-      <ContactForm />
-      <ContactsList />
-    </div>
-  );
-};
+    <Router>
+      <Layout>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/contacts" element={
+            <div style={{marginTop: "50px"}}>
+              <h1 className="text-2xl font-bold mb-4">Contacts</h1>
+              <ContactForm />
+              <ContactsList />
+            </div>
+          } />
+        </Routes>
+      </Layout>
+    </Router>
+  )
+}
 
-export default App;
+export default App

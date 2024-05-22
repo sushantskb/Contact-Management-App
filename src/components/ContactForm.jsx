@@ -1,28 +1,26 @@
-import { useState } from "react";
-import { useDispatch } from "react-redux";
-import { addContact } from "../features/contacts/contactSlice";
-import { v4 as uuidv4 } from "uuid"; // Import the v4 method from uuid
+import { useState } from 'react'
+import { useDispatch } from 'react-redux'
+import { addContact } from '../features/contacts/contactSlice'
+import { v4 as uuidv4 } from 'uuid'
 
 const ContactForm = () => {
-  const dispatch = useDispatch();
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [phone, setPhone] = useState("");
+  const dispatch = useDispatch()
+  const [name, setName] = useState('')
+  const [email, setEmail] = useState('')
+  const [phone, setPhone] = useState('')
 
   const handleSubmit = (e) => {
-    e.preventDefault();
-    dispatch(
-      addContact({
-        id: uuidv4(),
-        name,
-        email,
-        phone,
-      })
-    );
-    setName("");
-    setEmail("");
-    setPhone("");
-  };
+    e.preventDefault()
+    dispatch(addContact({
+      id: uuidv4(),
+      name,
+      email,
+      phone,
+    }))
+    setName('')
+    setEmail('')
+    setPhone('')
+  }
 
   return (
     <form onSubmit={handleSubmit} className="space-y-4">
@@ -63,7 +61,7 @@ const ContactForm = () => {
         Add Contact
       </button>
     </form>
-  );
-};
+  )
+}
 
-export default ContactForm;
+export default ContactForm
