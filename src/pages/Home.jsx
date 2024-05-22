@@ -11,10 +11,10 @@ const Home = () => {
           className="absolute inset-0 w-full h-full object-cover opacity-50 rounded-lg"
         />
         <div className="relative z-10 image" style={{margin: "405px auto"}}>
-          <h1 className="text-3xl md:text-4xl font-bold mb-4 head" style={{fontSize: "60px"}}>
+          <h1 className="text-3xl md:text-4xl font-bold mb-4 head" style={{fontSize: "50px"}}>
             Welcome to the Contact Management Dashboard
           </h1>
-          <p className="text-base md:text-lg para" style={{fontSize: "2rem", marginTop: "40px"}}>
+          <p className="text-base md:text-lg para" style={{fontSize: "1.5rem", marginTop: "30px"}}>
             Manage your contacts efficiently and effectively. Use the dashboard
             to add, view, and manage all your contacts in one place.
           </p>
