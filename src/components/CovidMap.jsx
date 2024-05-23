@@ -1,12 +1,29 @@
-import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet'
-import { useCountryData } from '../hooks/useCovidData'
-import 'leaflet/dist/leaflet.css'
+import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
+import { useCountryData } from '../hooks/useCovidData';
+import 'leaflet/dist/leaflet.css';
+import L from 'leaflet';
+
+// Import marker icons
+import iconUrl from 'leaflet/dist/images/marker-icon.png';
+import iconRetinaUrl from 'leaflet/dist/images/marker-icon-2x.png';
+import shadowUrl from 'leaflet/dist/images/marker-shadow.png';
+
+// Override the default icon settings
+L.Marker.prototype.options.icon = L.icon({
+  iconUrl,
+  iconRetinaUrl,
+  shadowUrl,
+  iconSize: [25, 41],
+  iconAnchor: [12, 41],
+  popupAnchor: [1, -34],
+  shadowSize: [41, 41],
+});
 
 const CovidMap = () => {
-  const { data, isLoading, error } = useCountryData()
+  const { data, isLoading, error } = useCountryData();
 
-  if (isLoading) return <div>Loading...</div>
-  if (error) return <div>Error fetching data</div>
+  if (isLoading) return <div>Loading...</div>;
+  if (error) return <div>Error fetching data</div>;
 
   return (
     <div>
@@ -30,7 +47,7 @@ const CovidMap = () => {
         ))}
       </MapContainer>
     </div>
-  )
-}
+  );
+};
 
-export default CovidMap
+export default CovidMap;
